@@ -68,9 +68,45 @@
                                 </a>
                             </p>
                         </div>
+
                     </form>
             </div>
         </section>
+        <!-- Final da Seção de Login -->
+        
+        
+        <!-- Fomulário de Recuperação de Senha -->
+        <section class="row mt-5">
+            <div class="col-lg-4 offset-lg-4 bg-light rounded" id="caixaLogin">
+                <h2 class="text-center mt-2">
+                    Gerar nova Senha
+                </h2>
+                <form action="#" method="post" id="informeSenha" class="p-2">
+                    <div class="form-group">
+                        <small class="text-muted">
+                            Para gerar uma nova senha, digite seu e-mail. Clique no link gerado
+                        </small>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" name="emailGerarSenha" id="emailGerarSenha" class="form-control" placeholder="Email de recuperação de senha">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="::Gerar::" name="btnGerar" id="btnGerar" class="btn btn-primary btn-block">
+
+                        <div class="form-group">
+                            <p class="text-center">
+                                Já registrad? 
+                                <a href="#" id="btnJaRegistrado">
+                                    Entrar por aqui.
+                                </a>
+                            </P>
+                        </div>
+                </form>
+            </div>
+        </section>
+        <!-- Fim da seção de Recuperação de senha -->
     </main>
 
     <!-- Optional JavaScript -->
