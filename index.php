@@ -97,7 +97,7 @@
 
                         <div class="form-group">
                             <p class="text-center">
-                                Já registrad? 
+                                Já registrado? 
                                 <a href="#" id="btnJaRegistrado">
                                     Entrar por aqui.
                                 </a>
