@@ -14,7 +14,7 @@ jquery é uma biblioteca de funções javascript.
 
 # aula02 - 24/09/2019
 layout Bootstrap para formulários
-- Formulário de logi
+- Formulário de login
 - Formulário de recuperação de senha
 - ~Formulário de cadastro de novos usuários~
 
