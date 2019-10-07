@@ -1,9 +1,16 @@
 # login
- Sistema Login em PHP e Javascript
+Sistema Login em PHP e Javascript
 
- # aula04 - 01/10/2019
- - Validação com HTMLS
- - Validação dos campos com jQuery validate
+# aula 06 - 07/10/2019
+
+
+# aula05 - 04/10/2019
+- Validação com HTMLS
+- Validação dos campos com JQuery validate
+
+# aula04 - 01/10/2019
+- Validação com HTMLS
+- Validação dos campos com jQuery validate
 
 # aula03 - 30/09/2019
 - Formulário de Cadastro de novos usuários
