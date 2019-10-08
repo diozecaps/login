@@ -9,9 +9,17 @@ if (isset($_POST['action'])) {
         echo "\n</pre>";
     } else if ($_POST['action'] = 'login') {
         //Senão, teste se ação é login
+        echo "\n<p>login</p>";
+        echo "\n<pre>"; //Pre-Formatar
+        print_r($_POST);
+        echo "\n</pre>";
 
     } else if ($_POST['action'] = 'senha') {
         //Senão, teste se ação é recuperar senha
+        echo "\n<p>senha</p>";
+        echo "\n<pre>"; //Pre-Formatar
+        print_r($_POST);
+        echo "\n</pre>";
 
     } else {
         header("location:index.php");
