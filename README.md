@@ -2,11 +2,11 @@
 Sistema Login em PHP e Javascript
 
 # aula 06 - 15/10/2019
+Persistência de dados no banco de dados.
 
 
 # aula05 - 04/10/2019
-- Validação com HTMLS
-- Validação dos campos com JQuery validate
+Envio de dados do Front-end para o Back-end, métodos GET e POST.
 
 # aula04 - 01/10/2019
 - Validação com HTMLS
