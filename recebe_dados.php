@@ -24,7 +24,7 @@ if(isset($_POST['action'])){
         $senhaUsuarioConfirmar = 
                 verificar_entrada($_POST['senhaUsuarioConfirmar']);
         
-        $dataCriado = date("Y-m-d"); //Data atual no formato Banco de Dados
+        $dataCriar = date("Y-m-d"); //Data atual no formato Banco de Dados
         //Codificando as senhas
         $senhaCodificada = sha1($senhaDoUsuario);
         $senhaConfirmarCod = sha1($senhaUsuarioConfirmar);
@@ -54,10 +54,10 @@ if(isset($_POST['action'])){
             }else{
                 //Usuário pode ser cadastrado no banco de dados
                 $sql = $connect->prepare("INSERT into usuario (nomeDoUsuario,
-                nomeCompleto, emailUsuario, senhaDoUsuario, dataCriado) 
+                nomeCompleto, emailUsuario, senhaDoUsuario, dataCriar) 
                 values(?, ?, ?, ?, ?)");
                 $sql->bind_param("sssss", $nomeDoUsuario, $nomeCompleto,
-                $emailUsuario, $senhaCodificada, $dataCriado);
+                $emailUsuario, $senhaCodificada, $dataCriar);
                 if($sql->execute()){
                     echo "<p class='text-success'>Usuário cadastrado</p>";
                 }else{
