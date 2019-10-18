@@ -40,4 +40,4 @@ if(isset($_POST['nome'])){
 
     print("\n<br><strong>Data de Nascimento: </strong>");
     print("$_POST[data_de_nascimento]");
-}v
+}
