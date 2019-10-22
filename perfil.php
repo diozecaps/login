@@ -1,5 +1,5 @@
 <?php
-require_once "session.php";
+    require_once "session.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -32,7 +32,6 @@ require_once "session.php";
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Perfil
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="#">Sobre</a>
@@ -48,14 +47,16 @@ require_once "session.php";
         <div class="container">
             <h1 class="display-4">Boas vindas</h1>
 
-            <h2 class="display-2 text-center rounded p-1" >
-                Nome completo
+            <h2 class="display-2 text-center rounded p-1 bg-warning">
+                <?= $nomeCompleto  ?>
             </h2>
             <h2 class="text-center">
-                E-mail do Usuário: jv@gmail.com
+                E-mail do Usuário: 
+                <a href="mailto:<?=$emailUsuario?>">
+                    <?=$emailUsuario?> 
             </h2>
             <h2 class="text-center">
-                Registrado em: 18/10/2019
+                Registrado em: <?=$dataCriar ?>
             </h2>
         </div>
     </div>
