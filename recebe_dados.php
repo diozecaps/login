@@ -1,7 +1,6 @@
 <?php
-//iniciando a sessão
+//Iniciando a sessão
 session_start();
-
 //Conexão com o banco de dados
 require_once 'configBD.php';
 function verificar_entrada($entrada)
@@ -37,7 +36,7 @@ if (isset($_POST['action'])) {
         // echo "<p>Nome de Usuário:  $nomeDoUsuario </p>";
         // echo "<p>E-mail: $emailUsuario </p>";
         // echo "<p>Senha codificada: $senhaCodificada</p>";
-        // echo "<p>Data de criação: $dataCriado</p>";
+        // echo "<p>Data de criação: $dataCriar</p>";
         if ($senhaCodificada != $senhaConfirmarCod) {
             echo "<p class='text-danger'>Senhas não conferem.</p>";
             exit();

@@ -21,7 +21,6 @@
         }
     </style>
 </head>
-
 <body class="bg-dark">
     <!-- Fundo Escuro -->
     <main class="container mt-4">
@@ -195,7 +194,7 @@
                 if (document
                     .querySelector("#formRegistro")
                     .checkValidity()) {
-                    .preventDefault(); //Não abrir outra págin
+                    e.preventDefault(); //Não abrir outra págin
                     //Envio dos dados via Ajax
                     $.ajax({
                         url: 'recebe_dados.php',
@@ -203,10 +202,6 @@
                         data: $("#formRegistro").serialize() + '&action=cadastro',
                         success: function(resposta) {
                             $("#alerta").show();
-                            //$(".resultado").html(resposta);
-                        if(resposta ==="ok"){
-                            window.location = "perfil.php";
-                        } else {
                             $(".resultado").html(resposta);
                         }
                     });
@@ -218,7 +213,7 @@
                 if (document
                     .querySelector("#formLogin")
                     .checkValidity()) {
-                    .preventDefault(); //Não abrir outra págin
+                    e.preventDefault(); //Não abrir outra págin
                     //Envio dos dados via Ajax
                     $.ajax({
                         url: 'recebe_dados.php',
@@ -228,7 +223,7 @@
                             $("#alerta").show();
                             //$(".resultado").html(resposta);
                             if (resposta === "ok") {
-                                window location = "perfil.php";
+                                window.location = "perfil.php";
                             } else {
                                 $(".resultado").html(resposta);
                             }
@@ -282,5 +277,4 @@
         });
     </script>
 </body>
-
 </html>
