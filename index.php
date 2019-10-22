@@ -195,7 +195,7 @@
                 if (document
                     .querySelector("#formRegistro")
                     .checkValidity()) {
-                    e.preventDefault(); //Não abrir outra págin
+                    .preventDefault(); //Não abrir outra págin
                     //Envio dos dados via Ajax
                     $.ajax({
                         url: 'recebe_dados.php',
@@ -203,6 +203,10 @@
                         data: $("#formRegistro").serialize() + '&action=cadastro',
                         success: function(resposta) {
                             $("#alerta").show();
+                            //$(".resultado").html(resposta);
+                        if(resposta ==="ok"){
+                            window.location = "perfil.php";
+                        } else {
                             $(".resultado").html(resposta);
                         }
                     });
@@ -214,7 +218,7 @@
                 if (document
                     .querySelector("#formLogin")
                     .checkValidity()) {
-                    e.preventDefault(); //Não abrir outra págin
+                    .preventDefault(); //Não abrir outra págin
                     //Envio dos dados via Ajax
                     $.ajax({
                         url: 'recebe_dados.php',
@@ -222,7 +226,12 @@
                         data: $("#formLogin").serialize() + '&action=login',
                         success: function(resposta) {
                             $("#alerta").show();
-                            $(".resultado").html(resposta);
+                            //$(".resultado").html(resposta);
+                            if (resposta === "ok") {
+                                window location = "perfil.php";
+                            } else {
+                                $(".resultado").html(resposta);
+                            }
                         }
                     });
                 }

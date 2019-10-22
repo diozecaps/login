@@ -1,4 +1,7 @@
 <?php
+//iniciando a sessão
+session_start();
+
 //Conexão com o banco de dados
 require_once 'configBD.php';
 function verificar_entrada($entrada)
@@ -25,7 +28,7 @@ if (isset($_POST['action'])) {
         $senhaUsuarioConfirmar =
             verificar_entrada($_POST['senhaUsuarioConfirmar']);
 
-        $dataCriado = date("Y-m-d"); //Data atual no formato Banco de Dados
+        $dataCriar = date("Y-m-d"); //Data atual no formato Banco de Dados
         //Codificando as senhas
         $senhaCodificada = sha1($senhaDoUsuario);
         $senhaConfirmarCod = sha1($senhaUsuarioConfirmar);
@@ -83,6 +86,7 @@ if (isset($_POST['action'])) {
         $sql->execute();
         $busca = $sql->fetch();
         if ($busca != null) {
+            $_SESSION['nomeDoUsuario'] = $nomeUsuario;
             echo "ok";
         } else {
             echo "<p class='text-danger'>";
