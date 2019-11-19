@@ -121,7 +121,7 @@ if (isset($_POST['action'])) {
             $palavra_secreta = str_shuffle($frase);
             $token = substr($palavra_secreta,0,10);
             //echo "Token: $token";
-            $sql = $connect->prepare("UPTADE usuario SET token=?, tempoDeVida =DATE_ADD(NOW(),INTERVAL 1 MINUTE)
+            $sql = $connect->prepare("UPDATE usuario SET token=?, tempoDeVida =DATE_ADD(NOW(),INTERVAL 1 MINUTE)
             emailUsuario = ?");
             $sql->bind_param("ss", $token, $email);
             $sql->execute();
