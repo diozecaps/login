@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 19-Nov-2019 às 09:14
+-- Tempo de geração: 18-Nov-2019 às 19:13
 -- Versão do servidor: 10.3.16-MariaDB
 -- versão do PHP: 7.3.7
 
@@ -37,18 +37,20 @@ CREATE TABLE `usuario` (
   `nomeCompleto` varchar(100) NOT NULL,
   `nomeDoUsuario` varchar(45) NOT NULL,
   `emailUsuario` varchar(45) NOT NULL,
-  `senhaDoUsuario` int(40) NOT NULL,
-  `dataCriar` date NOT NULL,
+  `senhaDoUsuario` char(40) NOT NULL,
+  `dataCrir` date NOT NULL,
   `token` char(10) NOT NULL,
-  `tempoDeVida` timestamp NOT NULL DEFAULT current_timestamp()
+  `tempoDeVida` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `usuario`
 --
 
-INSERT INTO `usuario` (`idUsuario`, `nomeCompleto`, `nomeDoUsuario`, `emailUsuario`, `senhaDoUsuario`, `dataCriar`, `token`, `tempoDeVida`) VALUES
-(1, 'josÃ© victor', 'zezincaps', 'zezin@gmail.com', 7, '2019-11-19', '', '2019-11-19 11:07:53');
+INSERT INTO `usuario` (`idUsuario`, `nomeCompleto`, `nomeDoUsuario`, `emailUsuario`, `senhaDoUsuario`, `dataCriado`, `token`, `tempoDeVida`) VALUES
+(1, 'Alberto Roberto', 'robert', 'robert@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '2019-11-18', '', '2019-11-18 21:06:03'),
+(2, 'Gilberto Roberto', 'gilbert', 'gilbert@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '2019-11-18', '', '2019-11-18 21:06:03'),
+(3, 'Norberto Roberto', 'norbert', 'norbert@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '2019-11-18', '', '2019-11-18 21:07:38');
 
 --
 -- Índices para tabelas despejadas
@@ -58,7 +60,9 @@ INSERT INTO `usuario` (`idUsuario`, `nomeCompleto`, `nomeDoUsuario`, `emailUsuar
 -- Índices para tabela `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`idUsuario`);
+  ADD PRIMARY KEY (`idUsuario`),
+  ADD UNIQUE KEY `nomeDoUsuario` (`nomeDoUsuario`),
+  ADD UNIQUE KEY `emailUsuario` (`emailUsuario`);
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
@@ -68,7 +72,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idUsuario` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

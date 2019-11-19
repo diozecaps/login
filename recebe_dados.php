@@ -110,10 +110,25 @@ if (isset($_POST['action'])) {
         }
     } else if ($_POST['action'] == 'senha') {
         //Senão, teste se ação é recuperar senha
-        echo "\n<p>senha</p>";
-        echo "\n<pre>"; //Pre-formatar
-        print_r($_POST);
-        echo "\n<\pre>";
+        $email = verificar_entrada($_POST['emailGerarSenha']);
+        $sql = $connect->prepare("SELECT idUsuario FROM usuario WHERE emailUsuario = ?");
+        $sql->bind_param("s", $email);
+        $sql->execute();
+        $resposta = $sql->get_result();
+        if($resposta->num_rows > 0){
+            //echo"E-mail encontrado!";
+            $frase ="UmPratoDeTrigoParaTresProgramadoresTristes";
+            $palavra_secreta = str_shuffle($frase);
+            $token = substr($palavra_secreta,0,10);
+            //echo "Token: $token";
+            $sql = $connect->prepare("UPTADE usuario SET token=?, tempoDeVida =DATE_ADD(NOW(),INTERVAL 1 MINUTE)
+            emailUsuario = ?");
+            $sql->bind_param("ss", $token, $email);
+            $sql->execute();
+            echo "token no banco de dados";
+        }else{
+            echo"E-mail não encontrado!";
+        }
     } else {
         header("location:index.php");
     }
