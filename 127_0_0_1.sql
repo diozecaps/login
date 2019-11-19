@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07-Out-2019 às 21:27
+-- Tempo de geração: 19-Nov-2019 às 09:14
 -- Versão do servidor: 10.3.16-MariaDB
 -- versão do PHP: 7.3.7
 
@@ -33,13 +33,42 @@ USE `senai`;
 
 DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE `usuario` (
-  `idUsuario` int(10) UNSIGNED NOT NULL primary key auto_increment,
+  `idUsuario` int(10) UNSIGNED NOT NULL,
   `nomeCompleto` varchar(100) NOT NULL,
   `nomeDoUsuario` varchar(45) NOT NULL,
   `emailUsuario` varchar(45) NOT NULL,
   `senhaDoUsuario` int(40) NOT NULL,
-  `dataCriar` date NOT NULL
+  `dataCriar` date NOT NULL,
+  `token` char(10) NOT NULL,
+  `tempoDeVida` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`idUsuario`, `nomeCompleto`, `nomeDoUsuario`, `emailUsuario`, `senhaDoUsuario`, `dataCriar`, `token`, `tempoDeVida`) VALUES
+(1, 'josÃ© victor', 'zezincaps', 'zezin@gmail.com', 7, '2019-11-19', '', '2019-11-19 11:07:53');
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices para tabela `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`idUsuario`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `idUsuario` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
