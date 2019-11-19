@@ -48,9 +48,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`idUsuario`, `nomeCompleto`, `nomeDoUsuario`, `emailUsuario`, `senhaDoUsuario`, `dataCriado`, `token`, `tempoDeVida`) VALUES
-(1, 'Alberto Roberto', 'robert', 'robert@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '2019-11-18', '', '2019-11-18 21:06:03'),
-(2, 'Gilberto Roberto', 'gilbert', 'gilbert@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '2019-11-18', '', '2019-11-18 21:06:03'),
-(3, 'Norberto Roberto', 'norbert', 'norbert@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '2019-11-18', '', '2019-11-18 21:07:38');
+
 
 --
 -- Índices para tabelas despejadas

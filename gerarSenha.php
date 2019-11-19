@@ -3,9 +3,33 @@ if (isset($_GET['token']) && isset($_GET['email'])) {
     require_once 'configBD.php';
     $email = $_GET['email'];
     $token = $_GET['token'];
-    $msg = "$email : $token";
+    //$msg = "$email : $token";
     //Só para teste! Método GET
     //gerarSenha.php?token=1234567890&email=robert@gmail.com
+
+    $sql = $connect->prepare("SELECT * FROM usuario WHERE emailUsuario=? AND token=? AND tempoDeVida > NOW()");
+    $sql->bind_param("ss",$email,$token);
+    $sql->execute();
+
+    $resultado = $sql->get_result();
+    if($resultado->num_rows >0){
+        if(isset($_POST['gerar'])){
+            $nova_senha = sha1($_POST['senha']);
+            $cofirmar_senha = sha1($_POST['csenha']);
+            if($nova_senha == $cofirmar_senha){
+                $sql = $connect->prepare("UPDATE usuario SET senhaDoUsuario=?, token='' WHERE emailUsuario=?");
+                $sql->bind_param("ss",$nova_senha,$email);
+                $sql->execute();
+                $msg = "Senha alterada com sucesso";
+            }else {
+                $msg = "Senhas não conferem";
+            }
+        }
+
+    }else{
+        header("location: index.php");
+        exit();
+    }
 
 } else {
     //Kickando para o Index
